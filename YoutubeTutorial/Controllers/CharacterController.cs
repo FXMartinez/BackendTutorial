@@ -86,6 +86,7 @@ namespace YoutubeTutorial.Controllers
             {
                 if (CharacterExists(character.Id))
                 {
+                    Console.WriteLine("this is coming from the backend");
                     return Conflict();
                 }
                 else

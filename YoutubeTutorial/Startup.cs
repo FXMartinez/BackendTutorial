@@ -28,6 +28,17 @@ namespace YoutubeTutorial
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            // recently added
+            services.AddCors(options =>
+            {
+                options.AddPolicy("CorsPolicy",
+                    builder => builder
+                        .AllowAnyHeader()
+                        .AllowAnyMethod()
+                        .AllowAnyOrigin()
+                        );
+            });
+
             services.AddDbContext<InventoryDbContext>(opt =>
             opt.UseSqlServer(@"Server=(localdb)\MSSQLLocalDb; Database=InventoryDb;Trusted_Connection=True;"));
             services.AddControllers();
@@ -40,6 +51,8 @@ namespace YoutubeTutorial
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            app.UseCors("CorsPolicy");
 
             app.UseHttpsRedirection();
 
