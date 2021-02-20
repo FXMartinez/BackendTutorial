@@ -86,7 +86,6 @@ namespace YoutubeTutorial.Controllers
             {
                 if (CharacterExists(character.Id))
                 {
-                    Console.WriteLine("this is coming from the backend");
                     return Conflict();
                 }
                 else
@@ -96,6 +95,7 @@ namespace YoutubeTutorial.Controllers
             }
 
             return CreatedAtAction("GetCharacter", new { id = character.Id }, character);
+            //return CreatedAtAction("GetCharacter", new { name = character.Name }, character);
         }
 
         // DELETE: api/Character/5

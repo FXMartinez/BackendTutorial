@@ -37,19 +37,19 @@ namespace YoutubeTutorial.Models
 
             modelBuilder.Entity<Bag>(entity =>
             {
-                entity.Property(e => e.Id).ValueGeneratedNever();
+                //entity.Property(e => e.Id).ValueGeneratedNever();
             });
 
             modelBuilder.Entity<Character>(entity =>
             {
-                entity.Property(e => e.Id).ValueGeneratedNever();
+                //entity.Property(e => e.Id).ValueGeneratedNever();
 
                 entity.Property(e => e.Name).HasColumnType("text");
             });
 
             modelBuilder.Entity<Item>(entity =>
             {
-                entity.Property(e => e.Id).ValueGeneratedNever();
+                //entity.Property(e => e.Id).ValueGeneratedNever();
 
                 entity.Property(e => e.Name).HasColumnType("text");
 
@@ -58,7 +58,7 @@ namespace YoutubeTutorial.Models
 
             modelBuilder.Entity<Weapon>(entity =>
             {
-                entity.Property(e => e.Id).ValueGeneratedNever();
+                //entity.Property(e => e.Id).ValueGeneratedNever();
 
                 entity.Property(e => e.Type).HasColumnType("text");
             });
